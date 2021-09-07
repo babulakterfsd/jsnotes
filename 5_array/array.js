@@ -95,6 +95,17 @@ var secondMax = function (arr){
 console.log(secondMax(numarr));
 console.log(numarr);
 
+othoba,
+
+  let array = [52,100,65,74,-98,154,74];
+
+function getThirdMax(arr) {
+    let maxToMin = arr.sort((a,b) => b - a)
+    return maxToMin[2]
+}
+
+console.log(getThirdMax(array));
+
 
 
 
