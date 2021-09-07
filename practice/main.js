@@ -1,3 +1,4 @@
+console.log('test');
 const productField = document.getElementById('product');
 let product = productField.value.trim();
 productField.addEventListener('keyup', (event) => {
