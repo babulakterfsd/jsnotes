@@ -1,48 +1,17 @@
-console.log('test');
-const productField = document.getElementById('product');
-let product = productField.value.trim();
-productField.addEventListener('keyup', (event) => {
-   product = event.target.value
-})
-
-const quantityField = document.getElementById('quantity')
-let quantity = productField.value.trim();
-quantityField.addEventListener('keyup', (event) => {
-   quantity = event.target.value
-})
-
-const btn = document.getElementById('addButton')
-const manual = document.getElementById('manual')
-const mystorage = document.getElementById('localStorage')
-
-let store = [];
-if(store.length === 0) {
- let myStore = JSON.parse(localStorage.getItem('store'))
+const myObj = {
+    person: {
+        name: 'babul Akter',
+        age: 26,
+        bio: {
+            profression: 'web development',
+            salary: 700
+        }
+    },
+    languages: ['javascript', 'typescript'],
+    hobby: 'playing cricket',
+    isStudent: false
 }
 
-btn.addEventListener('click', (event) => {
+const {person:{name: myName}, person: {bio: {profression: myprofession, salary: mySalary}}, languages: [,secondarylanguage]} = myObj;
 
-     let products = {product, quantity}
-     store.push(products)
-
-     localStorage.setItem(`store`, JSON.stringify(store))
-     
-   manual.innerHTML = ''
-   store.forEach(value => {
-      if(value.product && value.quantity) {
-         
-         const tr = document.createElement('tr')
-         tr.innerHTML = 
-                        `
-                          <td>${value.product}</td>
-                          <td>${value.quantity}</td>
-                         `
-         manual.appendChild(tr)
-     }
-   })
-
-    productField.value = ''
-    quantityField.value = ''
-    product = ''
-    quantity = ''
-})
+console.log(`${myName}'s profession is ${myprofession} and salary is ${mySalary} who knows ${secondarylanguage} also`);
