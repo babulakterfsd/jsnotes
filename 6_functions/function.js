@@ -546,6 +546,32 @@ console.log(sumOfArray(arr, arr.length - 1)) // will calculate the sum of an arr
 
 
 
+20. =========== How to calculate a numbers factorial? ===========
+
+
+//with while loop
+function factorial(n) {
+    var result = n;
+    if(n < 0) return `factorial of a negative number can't be calculated`
+    if (n === 0 || n === 1) 
+      return 1; 
+    while (n > 1) { 
+      n--;
+      result *= n;
+    }
+    return result;
+  }
+  console.log(factorial(0));
+
+  //with a recursive fucntion
+function fact(n) {
+    if(n < 0) return `factorial of a negative number can't be calculated`
+    if (n === 0 || n === 1) 
+      return 1;
+
+    return n * fact(n-1)
+}
+console.log(fact(7)) 
 
 
 
