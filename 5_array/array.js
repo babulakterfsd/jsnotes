@@ -85,12 +85,7 @@ numeric sort :
 let array = [25,100,41,-54,20,54,6,9,-23,54,100,27] //return the seconnd largest number from it
 
 function getSecondLargest(nums) {
-    // Complete the function
-    let filterredArray = Array.from(new Set(nums))
-
-    let secondLargest = filterredArray.sort((a,b) => b - a)[1]
-
-    return secondLargest;
+    return [...new Set(nums)].sort((a,b) => b - a)[1]
 }
 
 console.log(getSecondLargest(array));
