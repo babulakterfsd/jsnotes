@@ -82,30 +82,18 @@ numeric sort :
 
 2. =================== how to get the second max number of an array ===============
 
-let numarr = [4,2,9,7,5,1];
-var secondMax = function (arr){ 
-    var max = Math.max.apply(null, arr), // get the max of the array
-        maxi = arr.indexOf(max);
-    arr[maxi] = -Infinity; // replace max in the array with -infinity
-    var secondMax = Math.max.apply(null, arr); // get the new max 
-    arr[maxi] = max;
-    return secondMax;
-};
+let array = [25,100,41,-54,20,54,6,9,-23,54,100,27] //return the seconnd largest number from it
 
-console.log(secondMax(numarr));
-console.log(numarr);
+function getSecondLargest(nums) {
+    // Complete the function
+    let filterredArray = Array.from(new Set(nums))
 
-othoba,
+    let secondLargest = filterredArray.sort((a,b) => b - a)[1]
 
-  let array = [52,100,65,74,-98,154,74];
-
-function getThirdMax(arr) {
-    let maxToMin = arr.sort((a,b) => b - a)
-    return maxToMin[2]
+    return secondLargest;
 }
 
-console.log(getThirdMax(array));
-
+console.log(getSecondLargest(array));
 
 
 
